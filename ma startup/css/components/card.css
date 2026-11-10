@@ -1,0 +1,44 @@
+/* ===== Grille de cartes (CSS Grid) ===== */
+.cards {
+  display: grid;
+   grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ===== Une carte (Flexbox à l'intérieur) ===== */
+.card {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* L'image de la carte */
+.card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* Le titre de la carte */
+.card h3 {
+  flex-grow: 1;
+  padding-left: 20px;
+}
+
+/* ===== Responsive : moins de colonnes sur petit écran ===== */
+@media (max-width: 960px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
